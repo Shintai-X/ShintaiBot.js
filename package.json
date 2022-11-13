@@ -17,10 +17,13 @@
   },
   "homepage": "https://github.com/chinghytb/djs-v14-handler#readme",
   "dependencies": {
-    "discord.js": "^14.1.2",
-    "glob": "^7.2.0",
+    "@napi-rs/canvas": "^0.1.30",
+    "canvas": "^2.10.2",
+    "discord.js": "^14.6.0",
+    "glob": "^7.2.3",
+    "mongoose": "^6.7.2",
     "os": "^0.1.2",
     "parse-ms": "^3.0.0",
-    "util": "^0.12.4"
+    "util": "^0.12.5"
   }
 }

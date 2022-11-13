@@ -3,6 +3,8 @@ const { promisify } = require("util");
 const { Client } = require("discord.js");
 
 const globPromise = promisify(glob);
+const welcome = require('../SlashCommands/info/welcome');
+
 
 /**
  * @param {Client} client
@@ -39,11 +41,10 @@ module.exports = async (client) => {
         if (["MESSAGE", "USER"].includes(file.type)) delete file.description;
         arrayOfSlashCommands.push(file);
     });
-    client.on("ready", async () => {
+    client.once("ready", async () => {
         // Register for a single guild
-        await client.guilds.cache
-            .get("Your server id")
-            .commands.set(arrayOfSlashCommands);
+        await client.application.commands.set(arrayOfSlashCommands)
+        welcome(client)
 
         // Register for all the guilds the bot is in
         // await client.application.commands.set(arrayOfSlashCommands);
